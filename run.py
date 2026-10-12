@@ -37,11 +37,10 @@ def get_setting(args, ii=0):
 
 if __name__ == '__main__':
 
-    
+   
     parser = argparse.ArgumentParser(description='iTransformer')
 
-    # basic config
-    
+   
     parser.add_argument('--is_training', type=int, required=True, default=1, help='status')
     parser.add_argument('--model_id', type=str, required=True, default='test', help='model id')
 
@@ -81,16 +80,16 @@ if __name__ == '__main__':
                         default=True)
     parser.add_argument('--dropout', type=float, default=0.1, help='dropout')
     parser.add_argument('--geomattn_dropout', type=float, default=0.5, help='dropout rate of the projection layer in the geometric attention')
-   
+    
     parser.add_argument('--embed', type=str, default='timeF',
                         help='time features encoding, options:[timeF, fixed, learned]')
-  
+    
     parser.add_argument('--activation', type=str, default='gelu', help='activation')
-   
+    
     parser.add_argument('--do_predict', action='store_true', help='whether to predict unseen future data')
 
     # optimization
-  
+   
     parser.add_argument('--num_workers', type=int, default=10, help='data loader num workers')
     parser.add_argument('--itr', type=int, default=1, help='experiments times')
     parser.add_argument('--train_epochs', type=int, default=10, help='train epochs')
@@ -100,9 +99,9 @@ if __name__ == '__main__':
     parser.add_argument('--des', type=str, default='test', help='exp description')
     parser.add_argument('--loss', type=str, default='MSE', help='loss function')
     parser.add_argument('--lradj', type=str, default='type1', help='adjust learning rate')
-    
+  
     parser.add_argument('--pct_start', type=float, default=0.2, help='Warmup ratio for the learning rate scheduler')
-   
+    
     parser.add_argument('--use_amp', action='store_true', help='use automatic mixed precision training', default=False)
    
     parser.add_argument('--stable_len', type=int, default=8, help='stable_len')
@@ -120,7 +119,7 @@ if __name__ == '__main__':
     parser.add_argument('--use_multi_gpu', action='store_true', help='use multiple gpus', default=False)
     parser.add_argument('--devices', type=str, default='0,1,2,3', help='device ids of multile gpus')
 
-    
+  
     parser.add_argument('--exp_name', type=str, required=False, default='MTSF',
                         help='experiemnt name, options:[MTSF, partial_train]')
     parser.add_argument('--channel_independence', type=bool, default=False, help='whether to use channel_independence mechanism')
