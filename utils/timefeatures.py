@@ -1,4 +1,5 @@
 
+
 from typing import List
 
 import numpy as np
@@ -73,8 +74,7 @@ class WeekOfYear(TimeFeature):
     def __call__(self, index: pd.DatetimeIndex) -> np.ndarray:
         return (index.isocalendar().week - 1) / 52.0 - 0.5
 
-#                                    表示时间频率的字符串
-#返回值是一个包含 TimeFeature 类实例的列表。TimeFeature 可能是一个基类或抽象类，用于表示不同的时间特征
+
 def time_features_from_frequency_str(freq_str: str) -> List[TimeFeature]:
     """
     Returns a list of time features that will be appropriate for the given frequency string.
@@ -84,7 +84,6 @@ def time_features_from_frequency_str(freq_str: str) -> List[TimeFeature]:
         Frequency string of the form [multiple][granularity] such as "12H", "5min", "1D" etc.
     """
 
-    #偏移字典
     features_by_offsets = {
         offsets.YearEnd: [],
         offsets.QuarterEnd: [MonthOfYear],
@@ -109,7 +108,7 @@ def time_features_from_frequency_str(freq_str: str) -> List[TimeFeature]:
             DayOfYear,
         ],
     }
-    #将频率字符串转化为相应的偏移类型
+    
     offset = to_offset(freq_str)
 
     for offset_type, feature_classes in features_by_offsets.items():
@@ -132,7 +131,6 @@ def time_features_from_frequency_str(freq_str: str) -> List[TimeFeature]:
     """
     raise RuntimeError(supported_freq_msg)
 
-#根据输入的日期和频率字符串，从中提取出相关的时间特征
-#堆叠为二维数组
+
 def time_features(dates, freq='h'):
     return np.vstack([feat(dates) for feat in time_features_from_frequency_str(freq)])
