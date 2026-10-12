@@ -109,21 +109,11 @@ class Exp_Long_Term_Forecast(Exp_Basic):
         test_data, test_loader = self._get_data(flag='test')
 
 
-
-
-
-
         path = os.path.join(self.args.checkpoints, setting)
 
         if not os.path.exists(path):
             os.makedirs(path)
 
-
-        self.debug_hook = WaveletDebugHook(
-            enable=True,
-            trigger_batch=0,
-            save_dir=os.path.join(self.args.checkpoints, setting, "paper_figs")
-        )
 
         time_now = time.time()
 
