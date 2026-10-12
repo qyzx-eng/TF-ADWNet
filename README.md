@@ -24,33 +24,7 @@ TF-ADWNet/
     ├── traffic/
     └── weather/
 
-Dataset
 
-Directory
-
-ETTh1, ETTh2, ETTm1, ETTm2
-
-dataset/ETT-small/
-
-Electricity
-
-dataset/electricity/
-
-Traffic
-
-dataset/traffic/
-
-Weather
-
-dataset/weather/
-
-Before running an experiment:
-
-Download and extract the required dataset.
-
-Place its CSV file in the corresponding directory.
-
-Set the dataset directory and file name in the experiment script or configuration.
 
 Run the experiment from the project root directory.
 
