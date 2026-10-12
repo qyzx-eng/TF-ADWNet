@@ -7,10 +7,6 @@ from model.TF_ADWNet import Model
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-from utils.tools import plot_ecl_swt, plot_traffic_swt, plot_etth1_swt, plot_etth2_swt, plot_alpha_sensitivity
-
-
-
 
 def get_setting(args, ii=0):
     return '{}_{}_{}_{}_{}_{}_{}_{}_{}_{}_{}_{}_{}_{}_{}_{}_{}'.format(
