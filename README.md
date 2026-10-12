@@ -9,7 +9,8 @@ Implementation of **TF-ADWNet: A Time-Frequency Adaptive Dynamic Weighted Networ
 
 Install the dependencies:
 ```bash
-pip install -r environment.yml
+conda env create -f environment.yml
+conda activate TF-ADWNet
 ```
 Datasets
 
