@@ -37,13 +37,11 @@ def get_setting(args, ii=0):
 
 if __name__ == '__main__':
 
-    #创建了一个 ArgumentParser 对象，并为其提供了描述信息
-    #argparse用于处理命令行参数和选项。它的主要功能是帮助你编写用户友好的命令行接口，并自动生成帮助和错误信息
-    #ArgumentParser 是 argparse 模块中的一个类，用来创建一个命令行参数解析器对象。这个对象负责解析传递给脚本的命令行参数
+    
     parser = argparse.ArgumentParser(description='iTransformer')
 
     # basic config
-    #required=True 表示 --is_training 参数是必需的 用户在命令行中必须提供这个参数 否则程序会抛出一个错误并显示帮助信息
+    
     parser.add_argument('--is_training', type=int, required=True, default=1, help='status')
     parser.add_argument('--model_id', type=str, required=True, default='test', help='model id')
 
@@ -63,10 +61,9 @@ if __name__ == '__main__':
 
     # forecasting task
     parser.add_argument('--seq_len', type=int, default=96, help='input sequence length')
-    #label_len 更侧重于训练阶段的目标序列长度，可以是一个训练时用来计算损失的目标序列长度
-    #关注的是预测长度前几天的数据
+    
     parser.add_argument('--label_len', type=int, default=0, help='start token length')
-    #pred_len 更侧重于实际预测的时间步数，也就是你希望模型预测的未来时间序列的长度
+    
     parser.add_argument('--pred_len', type=int, default=96, help='prediction sequence length')
 
     # model define
@@ -76,25 +73,24 @@ if __name__ == '__main__':
     parser.add_argument('--n_heads', type=int, default=8, help='num of heads')
     parser.add_argument('--d_layers', type=int, default=1, help='num of decoder layers')
     parser.add_argument('--moving_avg', type=int, default=25, help='window size of moving average')
-    #注意力因子
+   
     parser.add_argument('--factor', type=int, default=1, help='attn factor')
-    #蒸馏技术
+   
     parser.add_argument('--distil', action='store_false',
                         help='whether to use distilling in encoder, using this argument means not using distilling',
                         default=True)
     parser.add_argument('--dropout', type=float, default=0.1, help='dropout')
     parser.add_argument('--geomattn_dropout', type=float, default=0.5, help='dropout rate of the projection layer in the geometric attention')
-    #控制时间特征的编码方式
-    #指定时间特征（如日期、时间、周、月等）如何进行编码或表示
+   
     parser.add_argument('--embed', type=str, default='timeF',
                         help='time features encoding, options:[timeF, fixed, learned]')
-    #激活函数 是ReLU函数的升级版
+  
     parser.add_argument('--activation', type=str, default='gelu', help='activation')
-    #没有‘store_true:则默认为false’
+   
     parser.add_argument('--do_predict', action='store_true', help='whether to predict unseen future data')
 
     # optimization
-    #指定数据加载器（DataLoader）中并行工作的线程数
+  
     parser.add_argument('--num_workers', type=int, default=10, help='data loader num workers')
     parser.add_argument('--itr', type=int, default=1, help='experiments times')
     parser.add_argument('--train_epochs', type=int, default=10, help='train epochs')
@@ -104,12 +100,11 @@ if __name__ == '__main__':
     parser.add_argument('--des', type=str, default='test', help='exp description')
     parser.add_argument('--loss', type=str, default='MSE', help='loss function')
     parser.add_argument('--lradj', type=str, default='type1', help='adjust learning rate')
-    #训练过程增加学习率的比例
+    
     parser.add_argument('--pct_start', type=float, default=0.2, help='Warmup ratio for the learning rate scheduler')
-    #action表示的是在配智中写--use_amp时，则为True；如果不写，默认为False
+   
     parser.add_argument('--use_amp', action='store_true', help='use automatic mixed precision training', default=False)
-    #定在某个过程中要考虑多少个时间步或数据点来判断模型的稳定性
-    #不懂
+   
     parser.add_argument('--stable_len', type=int, default=8, help='stable_len')
 
     parser.add_argument(
@@ -125,7 +120,7 @@ if __name__ == '__main__':
     parser.add_argument('--use_multi_gpu', action='store_true', help='use multiple gpus', default=False)
     parser.add_argument('--devices', type=str, default='0,1,2,3', help='device ids of multile gpus')
 
-    #指定实验名称
+    
     parser.add_argument('--exp_name', type=str, required=False, default='MTSF',
                         help='experiemnt name, options:[MTSF, partial_train]')
     parser.add_argument('--channel_independence', type=bool, default=False, help='whether to use channel_independence mechanism')
@@ -135,9 +130,7 @@ if __name__ == '__main__':
     parser.add_argument('--target_data_path', type=str, default='electricity.csv', help='data file')
     parser.add_argument('--efficient_training', type=bool, default=False, help='whether to use efficient_training (exp_name should be partial train)') # See Figure 8 of our paper for the detail
     parser.add_argument('--use_norm', type=int, default=True, help='use norm and denorm')
-    parser.add_argument('--partial_start_index', type=int, default=0, help='the start index of variates for partial training, '
-                                                                           #【起始索引，min（输入数据的维度+起始索引，输入数据点）】
-                                                                           'you can select [partial_start_index, min(enc_in + partial_start_index, N)]')
+    parser.add_argument('--partial_start_index', type=int, default=0, help='the start index of variates for partial training, ''you can select [partial_start_index, min(enc_in + partial_start_index, N)]')
 
 
     parser.add_argument('--requires_grad', type=bool, default=True, help='Set to True to enable learnable wavelets')
