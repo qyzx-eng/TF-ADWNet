@@ -109,11 +109,17 @@ class Exp_Long_Term_Forecast(Exp_Basic):
         test_data, test_loader = self._get_data(flag='test')
 
 
+
+
+
+
         path = os.path.join(self.args.checkpoints, setting)
 
         if not os.path.exists(path):
             os.makedirs(path)
 
+
+        
 
         time_now = time.time()
 
@@ -198,9 +204,9 @@ class Exp_Long_Term_Forecast(Exp_Basic):
                 if (i + 1) % 30 == 0:
                     print("\titers: {0}, epoch: {1} | loss: {2:.7f}".format(i + 1, epoch + 1, loss.item()))
                     speed = (time.time() - time_now) / iter_count
-                    #预计训练完所有的epoch需要多长时间
+                    
                     left_time = speed * ((self.args.train_epochs - epoch) * train_steps - i)
-                    #.4f输出小数点后4位小数
+                    
                     print('\tspeed: {:.4f}s/iter; left time: {:.4f}s'.format(speed, left_time))
                     iter_count = 0
                     time_now = time.time()
