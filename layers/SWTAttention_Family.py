@@ -108,7 +108,6 @@ def extract_freq_components(wavelet_embedding, x):
     return low_freq, high_freq
 
 
-# 升维
 def adjust_dimensions(input_tensor, m):
 
     batch_size, channels, length = input_tensor.shape
