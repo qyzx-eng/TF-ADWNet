@@ -17,7 +17,7 @@ python -u run.py \
   --d_model 256 \
   --d_ff 1024 \
   --learning_rate 0.006 \
-  --batch_size 256 \
+  --batch_size 128 \
   --fix_seed 2025 \
   --use_norm 1 \
   --wv "db1" \
