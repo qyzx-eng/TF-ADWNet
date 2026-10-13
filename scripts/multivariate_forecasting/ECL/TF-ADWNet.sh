@@ -26,7 +26,7 @@ python -u run.py \
   --dec_in 321 \
   --c_out 321 \
   --des 'Exp' \
-  --itr 3 \
+  --itr 1 \
   --alpha 0.0 \
   --l1_weight 5e-5
 
@@ -55,7 +55,7 @@ python -u run.py \
   --dec_in 321 \
   --c_out 321 \
   --des 'Exp' \
-  --itr 3 \
+  --itr 1 \
   --alpha 0.0 \
   --l1_weight 0.0
 
@@ -84,7 +84,7 @@ python -u run.py \
   --dec_in 321 \
   --c_out 321 \
   --des 'Exp' \
-  --itr 3 \
+  --itr 1 \
   --alpha 0.0 \
   --l1_weight 5e-5
 
@@ -114,7 +114,7 @@ python -u run.py \
   --dec_in 321 \
   --c_out 321 \
   --des 'Exp' \
-  --itr 3 \
+  --itr 1 \
   --alpha 0.0 \
   --l1_weight 5e-5
 
