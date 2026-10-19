@@ -3,7 +3,7 @@ channels:
   - defaults
   - conda-forge
 dependencies:
-  - python=3.12
+  - python=3.10.4
   - einops=0.8.1
   - matplotlib=3.7.0
   - numpy=2.0.1
