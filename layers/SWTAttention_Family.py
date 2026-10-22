@@ -108,6 +108,7 @@ def extract_freq_components(wavelet_embedding, x):
     return low_freq, high_freq
 
 
+
 def adjust_dimensions(input_tensor, m):
 
     batch_size, channels, length = input_tensor.shape
@@ -169,6 +170,15 @@ class GeomAttentionLayer(nn.Module):
 
         self.swt = WaveletEmbedding(d_channel=self.d_channel, swt=True, requires_grad=requires_grad, wv=wv, m=m,
                                     kernel_size=kernel_size)
+
+        self.iswt = WaveletEmbedding(
+            d_channel=self.d_channel,
+            swt=False,
+            requires_grad=requires_grad,
+            wv=wv,
+            m=m,
+            kernel_size=kernel_size
+        )
 
         self.query_projection = nn.Sequential(
             nn.Linear(d_model, d_model),
@@ -235,8 +245,7 @@ class GeomAttentionLayer(nn.Module):
         )
 
         low_freq_iswt_expand = adjust_dimensions(low_freq, self.configs.m + 1)
-        low_freq_iswt = self.swt.swt_reconstruction(low_freq_iswt_expand, self.swt.h0, self.swt.h1, self.swt.m,
-                                                               self.swt.kernel_size)
+        low_freq_iswt = self.iswt(low_freq_iswt_expand)
 
         low_freq_iswt = adjust_dimensions(low_freq_iswt, self.configs.m + 1)
         queries = self.query_projection(low_freq_iswt).permute(0, 3, 2, 1)
