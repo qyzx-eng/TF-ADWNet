@@ -26,7 +26,7 @@ python -u run.py \
   --dec_in 7 \
   --c_out 7 \
   --des 'Exp' \
-  --itr 3 \
+  --itr 1 \
   --alpha 0.2 \
   --l1_weight 0.005
 
@@ -55,7 +55,7 @@ python -u run.py \
   --dec_in 7 \
   --c_out 7 \
   --des 'Exp' \
-  --itr 3 \
+  --itr 1 \
   --alpha 0.1 \
   --l1_weight 0.005
 
@@ -84,7 +84,7 @@ python -u run.py \
   --dec_in 7 \
   --c_out 7 \
   --des 'Exp' \
-  --itr 3 \
+  --itr 1 \
   --alpha 0.1 \
   --l1_weight 0.005
 
@@ -113,6 +113,6 @@ python -u run.py \
   --dec_in 7 \
   --c_out 7 \
   --des 'Exp' \
-  --itr 3 \
+  --itr 1 \
   --alpha 0.1 \
   --l1_weight 0.005
