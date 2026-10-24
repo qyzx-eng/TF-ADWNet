@@ -149,7 +149,7 @@ if __name__ == '__main__':
 
     parser.add_argument('--output_attention', action='store_true', help='Set to False to output attn, which can be used to compute training loss')
 
-    parser.add_argument('--fix_seed', type=int, default=2025, help='gpu')
+    parser.add_argument('--fix_seed', type=int, default=2026, help='gpu')
 
 
     args = parser.parse_args()
