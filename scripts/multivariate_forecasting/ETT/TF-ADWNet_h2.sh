@@ -18,7 +18,7 @@ python -u run.py \
   --d_ff 64 \
   --learning_rate 0.006 \
   --batch_size 256 \
-  --fix_seed 2025 \
+  --fix_seed 2026 \
   --use_norm 1 \
   --wv bior3.1 \
   --m 1 \
@@ -47,7 +47,7 @@ python -u run.py \
   --d_ff 32 \
   --learning_rate 0.006 \
   --batch_size 256 \
-  --fix_seed 2025 \
+  --fix_seed 2026 \
   --use_norm 1 \
   --wv db1 \
   --m 1 \
@@ -76,7 +76,7 @@ python -u run.py \
   --d_ff 32 \
   --learning_rate 0.003 \
   --batch_size 256 \
-  --fix_seed 2025 \
+  --fix_seed 2026 \
   --use_norm 1 \
   --wv db1 \
   --m 1 \
@@ -105,7 +105,7 @@ python -u run.py \
   --d_ff 64 \
   --learning_rate 0.004 \
   --batch_size 256 \
-  --fix_seed 2025 \
+  --fix_seed 2026 \
   --use_norm 1 \
   --wv db1 \
   --m 1 \
