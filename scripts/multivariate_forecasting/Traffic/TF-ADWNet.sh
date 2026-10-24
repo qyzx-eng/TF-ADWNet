@@ -18,7 +18,7 @@ python -u run.py \
   --d_ff 1024 \
   --learning_rate 0.003 \
   --batch_size 24 \
-  --fix_seed 2025 \
+  --fix_seed 2026 \
   --use_norm 1 \
   --wv "db1" \
   --m 3 \
@@ -47,7 +47,7 @@ python -u run.py \
   --d_ff 2048 \
   --learning_rate 0.0005 \
   --batch_size 32 \
-  --fix_seed 2025 \
+  --fix_seed 2026 \
   --use_norm 1 \
   --wv "db1" \
   --m 1 \
@@ -76,7 +76,7 @@ python -u run.py \
   --d_ff 2048 \
   --learning_rate 0.0005 \
   --batch_size 32 \
-  --fix_seed 2025 \
+  --fix_seed 2026 \
   --use_norm 1 \
   --wv "db1" \
   --m 1 \
@@ -105,7 +105,7 @@ python -u run.py \
   --d_ff 2048 \
   --learning_rate 0.0005 \
   --batch_size 32 \
-  --fix_seed 2025 \
+  --fix_seed 2026 \
   --use_norm 1 \
   --wv "db1" \
   --m 1 \
