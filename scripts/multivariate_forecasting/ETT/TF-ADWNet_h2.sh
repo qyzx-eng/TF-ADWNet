@@ -21,7 +21,7 @@ python -u run.py \
   --fix_seed 2026 \
   --use_norm 1 \
   --wv bior3.1 \
-  --m 1 \
+  --m 3 \
   --enc_in 7 \
   --dec_in 7 \
   --c_out 7 \
@@ -50,7 +50,7 @@ python -u run.py \
   --fix_seed 2026 \
   --use_norm 1 \
   --wv db1 \
-  --m 1 \
+  --m 4 \
   --enc_in 7 \
   --dec_in 7 \
   --c_out 7 \
@@ -79,7 +79,7 @@ python -u run.py \
   --fix_seed 2026 \
   --use_norm 1 \
   --wv db1 \
-  --m 1 \
+  --m 5 \
   --enc_in 7 \
   --dec_in 7 \
   --c_out 7 \
@@ -108,7 +108,7 @@ python -u run.py \
   --fix_seed 2026 \
   --use_norm 1 \
   --wv db1 \
-  --m 1 \
+  --m 4 \
   --enc_in 7 \
   --dec_in 7 \
   --c_out 7 \
