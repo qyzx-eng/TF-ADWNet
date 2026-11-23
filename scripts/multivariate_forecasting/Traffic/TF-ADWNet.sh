@@ -21,7 +21,7 @@ python -u run.py \
   --fix_seed 2026 \
   --use_norm 1 \
   --wv "db1" \
-  --m 3 \
+  --m 2 \
   --enc_in 862 \
   --dec_in 862 \
   --c_out 862 \
@@ -108,7 +108,7 @@ python -u run.py \
   --fix_seed 2026 \
   --use_norm 1 \
   --wv "db1" \
-  --m 1 \
+  --m 3 \
   --enc_in 862 \
   --dec_in 862 \
   --c_out 862 \
